@@ -1,0 +1,23 @@
+
+def pass_test():
+  pass #無任何作用
+  
+pass_test()
+
+#def自訂區域變數
+def function(name, retry=5, reminder="Try again!!"):
+  while True:
+    ok = input(name)
+    if ok in ('yes'):
+      return True
+    if ok in ('no'):
+      retry = retry -1
+      if retry < 0:
+        raise ValueError('invalid user response')
+
+function('please enter yes or no: ')
+function('ok', 4)
+function('ok', 4, 'try more')
+
+
+
