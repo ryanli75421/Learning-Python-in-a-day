@@ -1,0 +1,11 @@
+
+#文件字串
+
+def document():
+  """
+  此為說明，無任何意義。
+  """
+  pass
+
+print(document.__doc__)  #打印出來
+
