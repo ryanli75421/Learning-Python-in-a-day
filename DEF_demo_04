@@ -1,0 +1,67 @@
+#以迴圈方式(取代遞迴方式，可節省記憶體空間)解決費氏數列
+
+def fibonaci(n):
+  x1, x2 = 0, 1
+  while x1 < n:
+    print(x1, end=' ')
+    x1, x2 = x2, x1+x2
+  print()
+  
+  
+#函數預設為物件參考(串列、字典與類別物件實體)
+
+def function(x1, D=[]) #宣告串列D(物件參考)給一個記憶體位置。如果是一般數字x1則沒有記憶體儲存空間。
+  D.append(x1)
+  return D
+
+print(function(1))
+print(function(10))
+print(function(100))
+
+#生存空間為區域變數時，離開區域空間則物件參考會被消滅掉，需每次呼叫函數重新分配。
+
+def function(x1, D=None) 
+  if D is None:
+    D = []
+  D.append(x1)
+  return D
+
+print(function(1))
+print(function(10))
+print(function(100))
+
+
+#關鍵字引數
+
+def school(time, class='10 degree', major='English', teacher='Mr. Wang') #只有time引數一定要給值，其餘引數有預設值
+  print("This class time is ", time)
+  print("The student degree is ", class)
+  print("Next class is ", major)
+  print("The teacher is ", teacher)
+
+school(10:00) #位置1引數
+school(time = 10:00)  #1個關鍵引數
+school(time = 10:00, major='Sport')  #2個關鍵引數
+school(major='Sport', time = 10:00)  #2個關鍵引數
+school('10:00', '9 degree', 'History')  #3個位置引數
+school('18:00', class='11 degree')  #1個位置引數，1個關鍵引數
+
+## *name只接受tuple, **name只接受字典(*name需要定義在**name之前)
+
+def caffee(price, *specifical, **content):
+  for spec in specifical:
+    print(spec)
+  for con in content:
+    print(con, ":", content[con])
+
+caffee("US10", "Take out", "Indoor", Ice="less", Sugar="more", Size="large")
+
+def connect(*words, sep="/"): #任意數量引述串列
+  return sep.join(words)
+
+print(connect("you", "and", "me"))
+print(connect("you", "and", "me", sep="."))
+
+
+
+
