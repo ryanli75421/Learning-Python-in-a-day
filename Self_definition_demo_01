@@ -1,0 +1,23 @@
+"""
+
+如果要建立自訂模組，則需要開一個以特定模組為命名的資料夾，並放入__init__.py檔案證實為模組。
+即可額外定義模組(weekly.py daily.py)功能。
+
+"""
+from moneycostmodule import daily, weekly
+print("每週花費計算： ")
+for day, total_cost in enumerate(weekly.calculate(), 1):
+  print(day, total_cost)
+
+print("每天花費計算： ", daily.calculate())
+
+
+
+#weekly.py (模組型態)
+def calculate():
+  return [50, 100, 30, 170, 140, 40, 400]
+  
+#daily.py  (模組型態)
+def calculate():
+  return 20
+  
