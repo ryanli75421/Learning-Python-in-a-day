@@ -1,0 +1,25 @@
+#類別成員屬性
+class number_class:
+  i=45  #成員屬性
+print(number_class.i)
+
+
+class Complex_number:
+  def __init__(self, realpart, imagpart): #為建構函數，實體化物件會呼叫它。第一個函數為自己本身。
+    self.r = realpart  #定義r屬性
+    self.i = imagpart  #定義i屬性
+x = Complex_number(6.3, -3.6) #有宣告參數，則必須在呼叫時輸入指定參數值。
+print(x.r, x.i)
+  
+  
+#類別成員方法
+
+class statement_class():
+  i = 34
+  
+  def function(self): #無參數函數
+    return 'Hi'
+
+x = statement_class()
+print(x.i)
+print(x.function())
