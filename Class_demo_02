@@ -1,0 +1,20 @@
+
+class Animal: #類別名稱要大寫
+  def __init__(self, input_name):
+    self.__name = input_name #私有類別 會用兩個下底線開頭。
+    self.__skill = []
+  
+  def add_skill(self, input_skill):
+    self.__skill.append(input_skill) #加入能力進入特定動物
+    
+  def printskill(self):
+    print(self.__name + str(self.__skill)) #寫出各動物之特色
+    
+x = Animal("dog")
+y = Animal("cat")
+
+x.add_skill("bark!!bark!!")
+y.add_skill("Silence...")
+
+x.printskill()
+y.printskill()
