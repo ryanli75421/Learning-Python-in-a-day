@@ -8,9 +8,11 @@ class Complex_number:
   def __init__(self, realpart, imagpart): #為建構函數，實體化物件會呼叫它。第一個函數為自己本身。
     self.r = realpart  #定義r屬性
     self.i = imagpart  #定義i屬性
+  def __del__(self):  #為解構函數
+    print('Class object is already deleted!!')
 x = Complex_number(6.3, -3.6) #有宣告參數，則必須在呼叫時輸入指定參數值。
 print(x.r, x.i)
-  
+x = none #將none分配給x即為指定解構
   
 #類別成員方法
 
