@@ -5,7 +5,7 @@ print(number_class.i)
 
 
 class Complex_number:
-  def __init__(self, realpart, imagpart): #為建構函數，實體化物件會呼叫它。第一個函數為自己本身。
+  def __init__(self, realpart, imagpart): #為初始化建構函數，實體化物件會呼叫它。第一個函數為自己本身。
     self.r = realpart  #定義r屬性
     self.i = imagpart  #定義i屬性
   def __del__(self):  #為解構函數
