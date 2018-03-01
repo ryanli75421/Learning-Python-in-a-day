@@ -1,0 +1,48 @@
+"""
+class 子類別(父類別1, 父類別2, 父類別3, ...):
+當子類別繼承超過一個來源時，優先選擇最左邊父類別繼承。
+
+多型：子類別與父類別有相同名字的函數
+"""
+#父類別1
+class Vehicle:
+  def __init__(self, name, engine):
+    self.__name = name #表private屬性，只有在Vehicle類別中才能存取。
+    self.__engine = engine
+  def getname(self):
+    return self.__name
+  def getengine(self):
+    return self.__engine
+  
+  def setengine(self, engine):
+    self.__engine = engine
+
+#父類別2
+class electric:
+  def __init__(self, powerelectric):
+    self.powerelectric = powerelectric
+  def getpower(self):
+    return self.__powereletric
+  def setpower(self, powerelectric):
+    self.__powerelectric = powerelectric
+
+#子類別
+class Car(Vehicle, electric):
+  def __init__(self,  name, engine, powerelectric, auto):
+    super().__init__(name, engine) #呼叫父類別參數
+    self.setpower(powerelectric)
+    self.__auto = auto
+    
+  def getcarname(self):
+    print("Name is " + self.getname())
+    print("Engine is " + self.getengine())
+    print("Electric car is " + self.getpower())
+    
+  def getauto(self):
+    return self.__auto
+
+mycar = car("Tesla", "magnetro-electric engine", electric power, auto-drive)
+mycar.getcarname()
+mycar.getauto()
+
+
