@@ -1,0 +1,37 @@
+
+while True:
+  try:
+    number = int(input("請輸入薪水數字"))
+    break
+  except ValueError:
+    print("輸入錯誤!!")
+
+import sys
+
+try:
+  function = open(myfile.py)  #開啟指定檔案
+  sentence = function.readline() #讀取每行字元
+  context = int(sentence.strip()) #字串轉換成整數
+except OSError as err:
+  print("OSError:(0)", format(err)) #找不到檔案則回傳
+except ValueError:
+  print("無法轉換成整數")  #無法轉換成整數則回傳
+except:
+  print("Unexpected error:", sys.exc_info()[0])
+  
+import sys
+
+def displaySalary(money):
+  if money < 0:
+    raise ValueError('it must be positive!!')
+  print("Salary is " + str(money))
+  
+try:
+  money = eval(input("Please enter your salary: "))
+  displaySalary(money)
+except OSError as err:
+  print("OSError:(0)", format(err))
+except ValueError:
+  print("Salary must be positive!!")
+except:
+  print("Unexpected error:", sys.exc_info()[0])
