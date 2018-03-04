@@ -1,0 +1,39 @@
+
+#數組Tuple():儲存固定元素，不可改變，有順序。
+
+tuple1 = ()  #建立tuple
+tuple2 = (10,20,30,40,50,60)
+print(sum(tuple2))  #計算總和
+print(tuple2[1:3]) #切割運算子
+tuple3 = tuple([X**2] for x in range(1,4))
+print(tuple3)
+print(len(tuple3))  #計算tuple3長度
+print(max(tuple3))  #顯示tuple3中最大值
+print(min(tuple3))  #顯示tuple3中最小值
+tuple4 = tuple([11,22,33,44,55,66])  #List轉tuple
+list4 = list(tuple4)   #tuple轉list
+
+
+#集合Set{}:儲存不固定元素(沒有重複元素)，可改變，沒有順序。
+
+set1 = set()   #建立set
+set2 = {'x', 'y', 'z', 'w', 'v'}  #建立set
+set2.add('a')   #增加a元素
+set2.remove('b')   #減去z元素
+set1.add('a', 'x')
+set3 = set1.union(set2)  #set1與set2聯集
+set4 = set1.intersection(set2) #set1與set2交集
+set5 = set1.difference(set2) #set1與set2差集
+
+
+#字典Dic{Key:Value}:儲存固定鍵值，可改變，有順序。
+
+birth = {'Amy':'19880325', 'Sam': '19760605'} #建立生日字典
+birth['Tim'] = '19841123'  #加入新鍵值
+print(birth)
+print(birth['Amy']) #查看特定索引鍵
+del tel['Sam'] #刪除特定鍵值
+print(list(birth.keys())) #將索引轉成list
+print(sorted(birth.keys())) #排序索引
+print('Amy' in bitrh)  #確認Amy是否存在字典內
+
