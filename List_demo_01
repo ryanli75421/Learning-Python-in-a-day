@@ -1,0 +1,26 @@
+
+#串列list
+Countries = ['United State', 'Japan', 'China', 'Germany', 'France', 'Japan', 'United State']
+Countries.count('United State') #計算有幾個United State
+Countries.index('China') #確認China的串列編號
+Countries.index('Japan', 3)  #從串列編號3(Germany)以後下一個為Japan的串列編號
+Countries.reverse()  #反轉Countries串列
+Countries.append('Australia') #加入新字串
+Countries.sort()   #串列排序
+Countries.pop()  #取出最後元素(此為stack堆疊方法)
+
+#堆疊stack為先進後出
+stack = [1, 2, 3]
+stack.append(4)
+stack.append(5)
+
+stack.pop() #5會先出來
+stack.pop() #4會出來
+
+#佇列deque為先進先出
+from collection import deque
+car_names = deque(['Audi', 'Benz', 'VW', 'Toyota'])
+car_names.append('Nissan')
+car_names.append('BMW')
+print(car_names.popleft())  #將第一項Audi提出來
+print(car_names.popleft())  #將第二項Benz提出來
