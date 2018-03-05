@@ -1,0 +1,43 @@
+
+"""
+file_open = open('檔案名稱', '檔案開啟模式') #開啟後會傳回一個參考
+
+r:開啟唯獨的檔案(開啟檔案存在), 產生異常錯誤(開啟檔案不存在)
+w:清除檔案內容後寫入(開啟檔案存在), 建立寫入檔案(開啟檔案不存在)
+a:開啟檔案從檔尾後開始寫入(開啟檔案存在), 建立寫入檔案(開啟檔案不存在)
+r+:開啟讀寫的檔案(開啟檔案存在), 產生錯誤(開啟檔案不存在)
+w+:清除檔案內容後讀寫內容(開啟檔案存在), 建立讀寫檔案(開啟檔案不存在)
+a+:從檔案尾巴開始讀寫(開啟檔案存在), 建立讀寫檔案(開啟檔案不存在)
+"""
+#開啟檔案
+file_open = open('text_file_1.txt', 'w') #開啟後會傳回一個參考
+if file_open != None:
+  print('THe file is aleady opened!!')
+file_open.close()
+
+file_open = open('text_file_1.txt', 'w')
+if file_open != None:
+  file_open.write('Amy')
+file_open.close()
+
+file_open = open('text_file_1.txt', 'w')
+if file_open != None:
+  file_open.write('Tim')
+file_open.close()
+
+
+#讀取檔案
+
+file_open = open('text_file_1', 'r')
+if file_open != None:
+  str = file_open.read() #只讀一行
+  print(str)
+file_open.close()
+
+file_open = open('text_file_1', 'r')
+if file_open != None:
+  str_list = file_open.readlines() #可讀多行，產生list串列
+  print(str_list)
+file_open.close()
+
+
