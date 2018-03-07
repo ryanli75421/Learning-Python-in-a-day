@@ -1,9 +1,11 @@
 
 """
 file_open = open('檔案名稱', '檔案開啟模式') #開啟後會傳回一個參考
-
-r:開啟唯獨的檔案(開啟檔案存在), 產生異常錯誤(開啟檔案不存在)
-w:清除檔案內容後寫入(開啟檔案存在), 建立寫入檔案(開啟檔案不存在)
+檔案開啟模式分為兩個字母，第一個字母為操作項目，第二個字母代表檔案類型
+r(t):開啟文字唯獨的檔案(開啟檔案存在), 產生異常錯誤(開啟檔案不存在)
+w(t):清除文字檔案內容後寫入(開啟檔案存在), 建立寫入檔案(開啟檔案不存在)
+rb:開啟二進位唯獨的檔案(開啟檔案存在), 產生異常錯誤(開啟檔案不存在)
+wb:清除二進位檔案內容後寫入(開啟檔案存在), 建立寫入檔案(開啟檔案不存在)
 a:開啟檔案從檔尾後開始寫入(開啟檔案存在), 建立寫入檔案(開啟檔案不存在)
 r+:開啟讀寫的檔案(開啟檔案存在), 產生錯誤(開啟檔案不存在)
 w+:清除檔案內容後讀寫內容(開啟檔案存在), 建立讀寫檔案(開啟檔案不存在)
@@ -41,3 +43,12 @@ if file_open != None:
 file_open.close()
 
 
+binary_data = bytes(range(0,127))
+binary_file = open('binarydata', 'wb')
+binary_file.write(binary_data)
+binary_file.close()
+
+with open('binarydata', 'rb') as file_context:  with...as... 
+  file_data = file_context.read()
+  for data in file_data:
+    print(file_data[data])
