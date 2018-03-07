@@ -43,12 +43,12 @@ if file_open != None:
 file_open.close()
 
 
-binary_data = bytes(range(0,127))
-binary_file = open('binarydata', 'wb')
-binary_file.write(binary_data)
+binary_data = bytes(range(0,128))  #產生0-127的二進位資料
+binary_file = open('binarydata', 'wb') #用二進位模式開啟檔案
+binary_file.write(binary_data)  #寫入檔案
 binary_file.close()
 
-with open('binarydata', 'rb') as file_context:  #with...as... 
+with open('binarydata', 'rb') as file_context:  #with...as...  打開檔案就會順便關閉，不需要額外加close()
   file_data = file_context.read()
   for data in file_data:
     print(file_data[data])
