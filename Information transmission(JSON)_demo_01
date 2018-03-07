@@ -1,0 +1,29 @@
+
+import json
+
+home{
+"home_1" : {
+"名字" : "吳家仁", 
+"年齡" : "28",
+"住址" : "台北市八德路三段25號",
+"聯絡方式" : {
+"住家" : "0223456789",
+"手機" : "0911223344"}},
+"home_2" : {
+"名字" : "劉家安", 
+"年齡" : "22",
+"住址" : "台北市長安東路140號",
+"聯絡方式" : {
+"住家" : "0298765432",
+"手機" : "0987487987"}}
+}
+
+city_address = json.dumps(home, ensure_ascii = False, indent = 2) 
+#將python物件轉成JSON可用物件
+#ensure_ascii = False, indent = 2 應用於資料有中文時
+print(city_address)
+
+home_2 = json.loads(city_address) #將JSON物件轉成python可用物件
+print(home_2) #印出字典
+
+
