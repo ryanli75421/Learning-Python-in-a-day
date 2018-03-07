@@ -48,7 +48,7 @@ binary_file = open('binarydata', 'wb')
 binary_file.write(binary_data)
 binary_file.close()
 
-with open('binarydata', 'rb') as file_context:  with...as... 
+with open('binarydata', 'rb') as file_context:  #with...as... 
   file_data = file_context.read()
   for data in file_data:
     print(file_data[data])
