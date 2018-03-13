@@ -1,0 +1,19 @@
+from tkinter import *
+
+class Window(Frame):
+  def __init__(self, master=None):  #定義初始化函數
+    Frame.__init__(self, master)
+    self.master = master
+    self.init_window()
+    
+  def init_window(self):
+    self.master.title("Interface GUI")
+    self.pack(fill = BOTH, expand = 1) 
+    quitButton = Button(self, text = "Quit") #建立按鍵
+    quitButton.place(x = 100, y = 100)   #設定按鍵位置
+    
+root = Tk()  #介面視窗
+root.geometry("200x200")  #視窗大小設定
+app = Window(root)
+root.mainloop()   #迴圈等待指令輸入
+    
