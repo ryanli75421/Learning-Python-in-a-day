@@ -1,0 +1,16 @@
+from PIL import Image, ImageColor
+
+myIm = Image.new('RGBA', (100, 100))#放在100x100
+myIm.getpixel((0, 0))
+
+for i in range(100):
+  for j in range(50):  #畫布上半部
+    myIm.putpixel((i, j), (255,255,255))  #color設定
+    
+for i in range(100):
+  for j in range(50, 100):  #畫布下半部
+    myIm.putpixel((i, j), ImageColor.getcolor('red', 'RGBA'))
+   
+print(myIm.getpixel((0,0)))
+print(myIm.getpixel((0,50)))
+myIm.save('Pixel_r.png')
