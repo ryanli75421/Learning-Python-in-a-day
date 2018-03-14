@@ -1,0 +1,27 @@
+
+from tkinter import *
+
+class MouseKeyEvent:
+  def __init__(self, window):
+    window.title("Mouse Key Event")
+    mycanvas = Canvas(window, bg = "white", width = 300, height = 300) #新增畫板 背景白色
+    mycanvas.pack() #打包管理放入主視窗
+    
+    mycanvas.bind('<key>', self.KeyEvent) #用bind做連結
+    mycanvas.focus_set()
+    mycanvas.bind('<Button-1>', self.MouseEvent)
+    window.mainloop()
+    
+ def KeyEvent(self, event):
+  print('鍵盤按鍵符號', event.keysym)
+  print('鍵盤按鍵碼', event.keycode)
+  print('鍵盤輸入字元', event.char)
+  
+ def MouseEvent(self, event):
+  print('滑鼠座標', event.x, event.y)
+  print('滑鼠在視窗的位置', event.x_root, event.y_root)
+  print('按下哪一個滑鼠按鈕', event.num)
+  
+mywindow = Tk()
+MouseKeyEvent(mywindow)
+    
