@@ -1,0 +1,37 @@
+
+from PIL import Image
+logo_file = 'python-mark.png' 
+logo_image = Image.open(logo_file)
+
+width, heigh = logo_image.size
+print(width, heigh)  #寬高
+print(logo_image.filename) #檔名
+print(logo_image.format)  #格式
+print(logo_image.format_description) #格式描述
+print(logo_image.save('python-mark.png'))
+
+#從原始圖案切割圖片出來
+logo_image =  logo_image.crop((5500, 2000, 6500, 3000)) #切1000x1000
+print(logo_image.save('python-crop.png'))
+width, heigh = logo_image.size
+print(width, heigh)  #寬高
+
+#複製貼上圖片
+
+my_copy_file = logo_image.copy() #複製圖片
+my_copy_file.paste(logo_image, (100, 100)) #貼上圖片
+my_copy_file.paste(logo_image, (2000, 2000)) #貼上圖片
+print(my_copy_file.save('python-copy.png'))
+
+#調整圖片長寬並旋轉180度
+logo_image_1 = logo_image.resize(int(width/4), int(heigh/4)) #縮小1/4
+print(logo_image_1.szie)
+logo_image_1.save('half_logo_image.png')
+
+logo_image_1 = logo_image.resize(int(width+2000), int(heigh+2000)) #放大
+print(logo_image_2.szie)
+logo_image_2.save('2000_logo_image.png')
+logo_image_2.rotate(180).save('rotate_180.png')  #旋轉180
+logo_image_2.transpose(Image.FLIP_TOP_BUTTON).save('Transpose_file.png')  #水平上下翻轉
+
+
