@@ -1,0 +1,39 @@
+
+#加入浮水印
+
+import os
+from PIL import Image
+size = 1800
+logo_file = 'python.png'
+logo_image = Image.open(logo_file)
+logo_width, logo_height = logo_image.size
+
+#新增image目錄
+os.makedirs('image_one', exist_ok = True)
+
+#搜尋目前目錄的所有檔案
+#選取所有png檔和jpg檔或檔名為logo_file
+for filename in os.listdir('.'):
+  if not (filename.endswith('.png') or filename.endswith('.jpg')) or filename == logo_file:
+    continue
+  im_file = Image.open(filename) #打開logo_file檔案
+  width, height = im_file.size
+  
+  #檢查影像大小是否要被修正
+  if width > size and height > size:
+    if width > height:
+      height = int((size / width) * height)
+      width = size
+    else:
+      width = int((size / height) * width)
+      height = size
+    #更新圖片大小
+    print('更新圖片大小 %s...' % (filename))
+    im_file = im_file.resize((width, height)) #要輸入數組
+    
+  #將圖片加入logo_file    
+  print('將圖片加入logo_file %s...' % (filename))
+  im.paste(logo_image, (width - logoWidth, height - logoHeight), logo_image)
+  
+  #儲存圖片
+  im.save(os.path.join('new_image', filename))
