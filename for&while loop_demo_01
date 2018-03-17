@@ -1,0 +1,17 @@
+#for loop
+
+for i in range(10, 30):
+  if(i%3=1):
+    continue  #如果i/3餘1成立(不列印)則程式繼續執行if否則跳出if判別式
+  print("i = ", i)
+  
+#while loop
+
+i = 10
+x = True
+while x:  #當True成立時執行以下迴圈
+  print("i: ", i)
+  i = i + 1
+  if(i > 10):
+    break  #當if成立(i>10)跳出迴圈
+  
