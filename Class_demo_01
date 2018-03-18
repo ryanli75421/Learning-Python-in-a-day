@@ -12,7 +12,7 @@ class Complex_number:
     print('Class object is already deleted!!')
 x = Complex_number(6.3, -3.6) #有宣告參數，則必須在呼叫時輸入指定參數值。
 print(x.r, x.i)
-x = none #將none分配給x即為指定解構
+x = None #當需要解構函數時，將none分配給x即為指定解構
   
 #類別成員方法
 
@@ -23,5 +23,5 @@ class statement_class():
     return 'Hi'
 
 x = statement_class()
-print(x.i)
+prin(x.i)
 print(x.function())
