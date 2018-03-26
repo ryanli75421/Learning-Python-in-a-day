@@ -30,7 +30,7 @@ try:
   money = eval(input("Please enter your salary: "))
   displaySalary(money)
 except OSError as err:
-  print("OSError:(0)", format(err))
+  print("OSError:(0)".format(err))
 except ValueError:
   print("Salary must be positive!!")
 except:
