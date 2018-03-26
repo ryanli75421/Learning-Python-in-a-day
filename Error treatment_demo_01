@@ -13,7 +13,7 @@ try:
   sentence = function.readline() #讀取每行字元
   context = int(sentence.strip()) #字串轉換成整數
 except OSError as err:
-  print("OSError:(0)".format(err)) #找不到檔案則回傳
+  print("OSError:(0)", format(err)) #找不到檔案則回傳
 except ValueError:
   print("無法轉換成整數")  #無法轉換成整數則回傳
 except:
@@ -30,7 +30,7 @@ try:
   money = eval(input("Please enter your salary: "))
   displaySalary(money)
 except OSError as err:
-  print("OSError:(0)".format(err))
+  print("OSError:(0)", format(err))
 except ValueError:
   print("Salary must be positive!!")
 except:
