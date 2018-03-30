@@ -1,0 +1,36 @@
+#pip install pandas
+"""
+主要為兩種資料結構
+序列(series):處理時間序列相關資料，建立索引的一維陣列。
+DataFrame:處理結構化資料，有列與欄索引的二維資料集。
+"""
+
+import pandas as pd
+
+df2=pd.read_csv('MI_INDEX.csv',encoding='big5') #以big5方式讀取
+df =pd.DataFrame(df2)
+print(df.tail())  #顯示後面幾列的資料
+print(df.shape)   #顯示列數與欄數
+print(df.info())  #顯示DataFrame
+print(df.describe()) #顯示統計資訊
+print(df.head())   #顯示前面幾列資訊
+print(df.index)    #索引資訊
+print(df.columns)  #顯示欄位
+print(df.tail().T) #df.T是將陣列轉置
+
+
+import pandas as pd
+
+groups = ["Movies", "Sports", "Coding", "Fishing", "Dancing", "cooking"]  
+num = [11, 18, 32, 14, 36, 28]
+
+dict = {"groups": groups,  
+        "num": num}
+
+select_df = pd.DataFrame(dict)
+print(select_df.iloc[:, :]) # 所有組 
+print(select_df.iloc[0, 1]) # 第一列第二欄：組的人數  
+print(select_df.iloc[0:1,:]) # 第一列：組的組名與人數  
+print(select_df.iloc[:,1]) # 第二欄：各組的人數  
+print(select_df["num"]) # 各組的人數  
+print(select_df.num) # 各組的人數 
